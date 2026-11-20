@@ -2,9 +2,13 @@
 
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![Google ADK](https://img.shields.io/badge/Google-ADK-green.svg)](https://github.com/google/agent-development-kit)
-[![Gemini 3.8 Flash](https://img.shields.io/badge/Model-Gemini%203.8%20Flash-orange.svg)](https://ai.google.dev/)
+[![Gemini](https://img.shields.io/badge/Model-Gemini%20Flash-orange.svg)](https://ai.google.dev/)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white)](Dockerfile)
+[![Jenkins](https://img.shields.io/badge/Jenkins-CI%2FCD-D24939?logo=jenkins&logoColor=white)](Jenkinsfile)
+[![AWS](https://img.shields.io/badge/AWS-ECR%20%7C%20EC2%20%7C%20SSM-232F3E?logo=amazon-aws&logoColor=white)](scripts/deploy_remote.sh)
 [![Tests: 84 Passed](https://img.shields.io/badge/Tests-84%20Passed%20%7C%20100%25%20Offline-success.svg)](https://pytest.org/)
 [![Benchmark: 100% Recall](https://img.shields.io/badge/Benchmark-100%25%20Recall%20%7C%20%CF%83%3D0.0000-brightgreen.svg)](evals/results.md)
+[![Release: v2.0](https://img.shields.io/badge/Release-v2.0-blue.svg)](https://github.com/DevRushi-engg/AuditPilot/releases/tag/v2.0)
 [![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)](LICENSE)
 
 > **"Auditors Sample. Agents Do Not Have To."**  
@@ -14,7 +18,7 @@
 
 ## Executive Summary
 
-**AuditPilot** is an enterprise-grade multi-agent financial forensic audit platform built with **Google Antigravity** and the **Google Agent Development Kit (ADK)**, powered by **Google Gemini 3.8 Flash**. Designed to assist audit teams with management override risk procedures under **ISA 240 / SA 240** (*The Auditor’s Responsibilities Relating to Fraud in an Audit of Financial Statements*), AuditPilot ingests general ledger transactions, trial balances, employee master files, vendor registers, monthly financial snapshots, and corporate governance SOPs to detect occupational fraud, accounting anomalies, policy violations, and internal control breakdowns.
+**AuditPilot** is an enterprise-grade multi-agent financial forensic audit platform built with **Google Antigravity** and the **Google Agent Development Kit (ADK)**, powered by **Google Gemini Flash**. Designed to assist audit teams with management override risk procedures under **ISA 240 / SA 240** (*The Auditor’s Responsibilities Relating to Fraud in an Audit of Financial Statements*), AuditPilot ingests general ledger transactions, trial balances, employee master files, vendor registers, monthly financial snapshots, and corporate governance SOPs to detect occupational fraud, accounting anomalies, policy violations, and internal control breakdowns.
 
 ### The Core Rule: "LLMs Reason. Code Calculates."
 
@@ -156,6 +160,20 @@ The adversarial skeptic review preserves substantiated findings while archiving 
 
 ---
 
+## Forensic Datasets & Agent Inspection Matrix
+
+The multi-agent pipeline ingests five core financial and governance data files from `data/`:
+
+| Data File | Primary Inspecting Agents | Key Forensic Audit Checks & Procedures |
+| :--- | :--- | :--- |
+| **`data/ledger.csv`**<br>(6,000 entries · ₹17.11 Cr turnover) | `intake_agent`<br>`anomaly_agent`<br>`policy_agent`<br>`skeptic_agent` | • Verifies double-entry mathematical balance: Total Debits == Total Credits.<br>• Uncovers statistical anomalies via Benford’s Law ($\chi^2$ test).<br>• Detects duplicate payments and structured split-payments (< ₹50,000 approval limit).<br>• Identifies weekend/Sunday round-amount transactions.<br>• Flags self-approved journal entries (poster == approver).<br>• Skeptic verifies that 100% of cited `entry_id`s physically exist in the ledger. |
+| **`data/trial_balance.csv`**<br>(29 accounts) | `intake_agent` | • Reconciles ledger account aggregates against official trial balance.<br>• Isolates the ₹1,25,000.00 discrepancy on Account 6020 (*Repairs & Maintenance - Machinery*). |
+| **`data/vendors.csv`** (120 vendors) &<br>**`data/employees.csv`** (40 staff) | `vendor_agent` | • **Shared Bank Accounts:** Detects direct bank account overlaps between employees and vendors (kickback and conflict of interest fraud).<br>• **Ghost Vendors:** Identifies newly created entities lacking GSTIN identifiers receiving accelerated disbursements. |
+| **`data/financials.csv`**<br>(12 monthly snapshots) | `ratio_agent` | • 12-month analytics on gross margins, operating margins, and EBITDA trends.<br>• Stress tests working capital liquidity (Current Ratio, Cash Ratio) and leverage solvency. |
+| **`data/policy.md`**<br>(Corporate Governance SOPs) | `policy_agent` | • Semantic TF-IDF Cosine RAG retrieval of corporate approval thresholds.<br>• Evaluates compliance with segregation of duties (SoD) policies. |
+
+---
+
 ## Quantitative Benchmark Evaluation
 
 AuditPilot was evaluated against the isolated benchmark dataset (`data/ground_truth.csv`) across **3 consecutive independent evaluation runs**. The system achieved **100.0% Recall** across all 7 targeted anomaly categories with zero variance between runs ($\sigma = 0.0000$).
@@ -197,7 +215,63 @@ When presenting this project to audit partners, risk committees, and executive h
    The platform operates as a copilot, not a black-box replacement. The agent prepares a draft memorandum, but **only a human Audit Partner can execute the sign-off action** (`APPROVE` $\to$ `Status: FINAL`).
 
 > **Recommended Portfolio / Resume Bullet:**  
-> *"Architected and built AuditPilot, an enterprise multi-agent financial forensic copilot (Google ADK, Gemini, Python) that replaces traditional ~5% audit sampling with 100% population testing across ₹17.11 Cr in journal entries, achieving 100.0% recall on planted occupational fraud and accounting anomalies with cryptographic provenance and a human-in-the-loop sign-off gate."*
+> *"Architected and built AuditPilot, an enterprise multi-agent financial forensic copilot (Google ADK, Gemini, Python) that replaces traditional ~5% audit sampling with 100% population testing across ₹17.11 Cr in journal entries, achieving 100.0% recall on planted occupational fraud and accounting anomalies with cryptographic provenance, a human-in-the-loop sign-off gate, and automated Jenkins CI/CD deployment to AWS."*
+
+---
+
+## Enterprise Cloud Deployment & CI/CD Pipeline (Part 2)
+
+AuditPilot includes a production-ready containerization and automated continuous deployment architecture designed for Amazon Web Services (AWS):
+
+```mermaid
+flowchart LR
+    Dev["Developer\n(git push)"] --> GitHub["GitHub\n(main branch)"]
+    GitHub --> Jenkins["Jenkins CI/CD Server\n(t3.small / Docker host)"]
+    
+    subgraph JenkinsPipeline ["Automated Jenkins Pipeline (Jenkinsfile)"]
+        direction TB
+        S1["1. Checkout & Log"] --> S2["2. Build Docker Image\n(auditpilot:$BUILD_NUMBER)"]
+        S2 --> S3["3. Run Offline Pytest\n(docker run --rm ... pytest -q)"]
+        S3 --> S4["4. Authenticate & Push\n(Amazon ECR private repo)"]
+        S4 --> S5["5. Remote Deploy\n(AWS SSM Run Command)"]
+    end
+    
+    Jenkins --> JenkinsPipeline
+    S4 --> ECR["Amazon ECR\n(ap-south-1 Mumbai)"]
+    S5 --> AppEC2["Target AWS EC2\n(auditpilot_app / Port 8080)"]
+    ECR -.->|Pulls Image| AppEC2
+```
+
+### 1. Docker Containerization (`Dockerfile` & `main.py`)
+* Built on a lean `python:3.12-slim` base image with a dedicated non-root user (`appuser`).
+* Runs a production FastAPI server (`main.py`) serving the Google ADK Web UI and a `/health` probe.
+* Container listens internally on port `8080`.
+* **Run locally with Docker (using an alternate host port to prevent collisions with local services like Jenkins):**
+  ```bash
+  # 1. Build the Docker image
+  docker build -t auditpilot:local .
+
+  # 2. Run the offline test suite inside the container
+  docker run --rm auditpilot:local pytest -q
+
+  # 3. Start the containerized application
+  docker run --rm -p 8085:8080 --env-file auditpilot/.env auditpilot:local
+  ```
+  Access the web interface at [http://localhost:8085](http://localhost:8085) and health probe at [http://localhost:8085/health](http://localhost:8085/health).
+
+### 2. Jenkins Automated CI/CD Pipeline (`Jenkinsfile`)
+* Automated 5-stage pipeline executing on every push to `main`:
+  1. **Checkout:** Clones the latest commit from GitHub.
+  2. **Build Image:** Builds the Docker container tagged with both `$BUILD_NUMBER` and `latest`.
+  3. **Run Tests:** Executes `pytest -q` inside the fresh container. If any test fails, the pipeline aborts immediately.
+  4. **Push to ECR:** Authenticates via `aws ecr get-login-password` and pushes image tags to the private Amazon ECR repository.
+  5. **Deploy:** Executes `scripts/deploy_remote.sh`, invoking **AWS Systems Manager (SSM)** Run Command to pull and restart the container on the target EC2 application instance (`auditpilot_app`).
+  6. **Post Cleanup:** Automatically prunes dangling images to conserve disk space.
+
+### 3. AWS Infrastructure & Governance
+* **Target Region:** `ap-south-1` (Mumbai).
+* **IAM Least-Privilege:** Instance profile `auditpilot_jenkins_profile` grants scoped ECR push and SSM invocation permissions.
+* **Network Security:** Host ingress restricted strictly to the authorized administrator IP (`MY_IP/32`).
 
 ---
 
@@ -251,6 +325,7 @@ AuditPilot/
 │   ├── run_eval.py                 # 3-run evaluation runner against ground truth
 │   └── results.md                  # Comprehensive benchmark report
 ├── scripts/
+│   ├── deploy_remote.sh            # AWS SSM remote deployment automation
 │   └── make_data.py                # Synthetic dataset generation engine (Seed 42)
 ├── tests/                          # Automated offline test suite (84 tests)
 │   ├── test_data.py                # Data generation & schema integrity
@@ -262,6 +337,10 @@ AuditPilot/
 │   ├── test_skeptic.py             # Skeptic loop & ID verification tests
 │   ├── test_report.py              # Memo drafting & sign-off workflow tests
 │   └── test_guardrails.py          # Bank masking & audit_trail.jsonl tests
+├── .dockerignore                   # Docker context exclusions
+├── Dockerfile                      # Production container image specification
+├── Jenkinsfile                     # 5-stage automated CI/CD pipeline
+├── main.py                         # Production FastAPI server & ADK Web host
 ├── pytest.ini                      # Pytest test configuration
 ├── requirements.txt                # Pinned project dependencies
 └── README.md                       # Comprehensive platform documentation
@@ -273,6 +352,7 @@ AuditPilot/
 
 ### Prerequisites
 * Python 3.11 or higher
+* Docker (optional, for containerized execution)
 * Linux, macOS, or Windows WSL2
 * Git
 
@@ -295,7 +375,7 @@ cp .env.example .env  # Or create .env directly
 Add your Google Gemini API key:
 ```ini
 GEMINI_API_KEY=your_gemini_api_key_here
-GEMINI_MODEL=gemini-3.8-flash
+GEMINI_MODEL=gemini-3.5-flash-lite
 ```
 
 ---
