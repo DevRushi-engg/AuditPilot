@@ -2,7 +2,7 @@
 
 # 🛡️ AuditPilot
 ### Autonomous Multi-Agent Financial Forensic Audit Copilot
-**Built with Google Antigravity · Google Agent Development Kit (ADK) · Google Gemini Flash · Docker · Jenkins · AWS**
+**Google Agent Development Kit (ADK) · Google Gemini Flash · Docker · Jenkins · AWS**
 
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/downloads/)
 [![Google ADK](https://img.shields.io/badge/Google-ADK%202.14-4285F4?logo=google&logoColor=white)](https://github.com/google/agent-development-kit)
