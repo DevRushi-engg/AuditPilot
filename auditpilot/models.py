@@ -12,12 +12,12 @@ def get_gemini_model(model_name: str | None = None) -> Gemini:
 
     Args:
         model_name: Optional override model identifier. Defaults to GEMINI_MODEL env var
-                    or 'gemini-3.8-flash'.
+                    or 'gemini-3.5-flash-lite'.
 
     Returns:
         Configured Gemini model instance with exponential jitter backoff on transient errors.
     """
-    name = model_name or os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
+    name = model_name or os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
     retry_options = HttpRetryOptions(
         attempts=5,
         initial_delay=2.0,
