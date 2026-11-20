@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "/home/rushi/Desktop/AuditPilot/.archify/architecture-auditpilot-20261120-214800/candidate.json",
+    "sha256": "f04557ef7ae7f9ea5839e619e14383dec455761d68a47947e4d2c5670e38ed53",
+    "bytes": 14733
+  },
+  "artifact": {
+    "path": "/home/rushi/Desktop/AuditPilot/docs/auditpilot-architecture.html",
+    "sha256": "f956e009855f8aa296d7013a0fc638a532d068fa0999d3f9911b07172e4bad90",
+    "bytes": 889097
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "/home/rushi/Desktop/AuditPilot/docs/auditpilot-architecture.finalize.json",
+    "summaryReceipt": "/home/rushi/Desktop/AuditPilot/docs/auditpilot-architecture.finalize-summary.json",
+    "browserCheckReceipt": "/home/rushi/Desktop/AuditPilot/docs/auditpilot-architecture.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-11-20T16:25:36.237Z",
+    "source": "network",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 5842,
+  "browserCheck": {
+    "requested": true,
+    "ran": true
+  }
+}

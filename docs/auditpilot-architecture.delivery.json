@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "dd66c27b-2e21-429f-b707-636573590c22",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "/home/rushi/Desktop/AuditPilot/.archify/architecture-auditpilot-20261120-214800/candidate.json",
+  "output": "/home/rushi/Desktop/AuditPilot/docs/auditpilot-architecture.html",
+  "specification": {
+    "sha256": "f04557ef7ae7f9ea5839e619e14383dec455761d68a47947e4d2c5670e38ed53",
+    "bytes": 14733
+  },
+  "artifact": {
+    "sha256": "f956e009855f8aa296d7013a0fc638a532d068fa0999d3f9911b07172e4bad90",
+    "bytes": 889097
+  }
+}
