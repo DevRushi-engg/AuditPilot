@@ -8,3 +8,6 @@ audit_trail.jsonl
 .agents/
 .archify/
 *.webm
+skills-lock.json
+docs/auditpilot-architecture.html
+docs/auditpilot-architecture.*.json
