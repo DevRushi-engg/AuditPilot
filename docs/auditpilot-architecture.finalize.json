@@ -5,16 +5,16 @@
   "status": "pass",
   "type": "architecture",
   "quality": "showcase",
-  "startedAt": "2026-11-20T16:25:36.095Z",
+  "startedAt": "2026-11-20T16:40:34.627Z",
   "specification": {
     "path": "/home/rushi/Desktop/AuditPilot/.archify/architecture-auditpilot-20261120-214800/candidate.json",
-    "sha256": "f04557ef7ae7f9ea5839e619e14383dec455761d68a47947e4d2c5670e38ed53",
-    "bytes": 14733
+    "sha256": "fc3cac8757d0fa5cdac6aa568d2133c36962496c3b6902621d6cecdeecf1a22e",
+    "bytes": 17913
   },
   "artifact": {
     "path": "/home/rushi/Desktop/AuditPilot/docs/auditpilot-architecture.html",
-    "sha256": "f956e009855f8aa296d7013a0fc638a532d068fa0999d3f9911b07172e4bad90",
-    "bytes": 889097
+    "sha256": "7a0af4202d8a3651048d5292c32432ab4cab6361869b4afecb3a2843f572827a",
+    "bytes": 904844
   },
   "stages": {
     "validate": {
@@ -40,8 +40,8 @@
         "ok": true,
         "command": "validate",
         "specification": {
-          "sha256": "f04557ef7ae7f9ea5839e619e14383dec455761d68a47947e4d2c5670e38ed53",
-          "bytes": 14733
+          "sha256": "fc3cac8757d0fa5cdac6aa568d2133c36962496c3b6902621d6cecdeecf1a22e",
+          "bytes": 17913
         },
         "validation": {
           "checksPassed": 9,
@@ -56,7 +56,7 @@
     "deliver": {
       "status": "pass",
       "exitCode": 0,
-      "durationMs": 750,
+      "durationMs": 761,
       "command": [
         "/home/rushi/.local/opt/node-v22.14.0-linux-x64/bin/node",
         "/home/rushi/Desktop/AuditPilot/.agents/skills/archify/bin/archify.mjs",
@@ -72,19 +72,19 @@
       ],
       "receipt": {
         "schemaVersion": 1,
-        "receiptId": "dd66c27b-2e21-429f-b707-636573590c22",
+        "receiptId": "12fea6f7-b7ac-4729-9e85-c8f6803135c1",
         "ok": true,
         "command": "deliver",
         "type": "architecture",
         "input": "/home/rushi/Desktop/AuditPilot/.archify/architecture-auditpilot-20261120-214800/candidate.json",
         "output": "/home/rushi/Desktop/AuditPilot/docs/auditpilot-architecture.html",
         "specification": {
-          "sha256": "f04557ef7ae7f9ea5839e619e14383dec455761d68a47947e4d2c5670e38ed53",
-          "bytes": 14733
+          "sha256": "fc3cac8757d0fa5cdac6aa568d2133c36962496c3b6902621d6cecdeecf1a22e",
+          "bytes": 17913
         },
         "artifact": {
-          "sha256": "f956e009855f8aa296d7013a0fc638a532d068fa0999d3f9911b07172e4bad90",
-          "bytes": 889097
+          "sha256": "7a0af4202d8a3651048d5292c32432ab4cab6361869b4afecb3a2843f572827a",
+          "bytes": 904844
         },
         "validation": {
           "checksPassed": 9,
@@ -98,7 +98,7 @@
           "verified": true,
           "repository": "https://github.com/DevRushi-engg/AuditPilot",
           "revision": "c157c0d0d06e006a4a92e3808ea264afe0e78f24",
-          "references": 25
+          "references": 27
         },
         "update": {
           "status": "unavailable",
@@ -116,7 +116,7 @@
     "check": {
       "status": "pass",
       "exitCode": 0,
-      "durationMs": 382,
+      "durationMs": 390,
       "command": [
         "/home/rushi/.local/opt/node-v22.14.0-linux-x64/bin/node",
         "/home/rushi/Desktop/AuditPilot/.agents/skills/archify/bin/archify.mjs",
@@ -128,8 +128,8 @@
         "ok": true,
         "file": "/home/rushi/Desktop/AuditPilot/docs/auditpilot-architecture.html",
         "artifact": {
-          "sha256": "f956e009855f8aa296d7013a0fc638a532d068fa0999d3f9911b07172e4bad90",
-          "bytes": 889097
+          "sha256": "7a0af4202d8a3651048d5292c32432ab4cab6361869b4afecb3a2843f572827a",
+          "bytes": 904844
         },
         "checks": [
           {
@@ -196,16 +196,16 @@
             "containerBorderRuns": 0,
             "labelRouteClearanceIssues": 0,
             "labelCanvasOverflowIssues": 0,
-            "minLabelRouteClearance": 57.6,
+            "minLabelRouteClearance": 12.1,
             "desktopReadabilityIssues": 0,
             "viewportHeightIssues": 0,
-            "minProjectedNodeTextPx": 7.5,
-            "maxBends": 0,
+            "minProjectedNodeTextPx": 6.861960784313725,
+            "maxBends": 2,
             "routesOverSuggestedBends": 0,
             "maxStretch": 1,
             "routesOverSuggestedStretch": 0,
-            "minSegmentPx": 100,
-            "minInteriorSegmentPx": null,
+            "minSegmentPx": 31.9,
+            "minInteriorSegmentPx": 31.9,
             "shortSegmentCount": 0,
             "shortEndpointSegmentCount": 0,
             "shortInteriorSegmentCount": 0,
@@ -228,36 +228,34 @@
           "desktopReadability": {
             "budgetBasis": "recognized-declared-wide",
             "readerContract": "declared-wide-v1",
-            "availableDiagramWidth": 1334.0625,
-            "actualBudgetPx": 1334.0625,
-            "actualReaderWidth": 1364.0625,
-            "desiredReaderWidth": 1364.0625,
+            "availableDiagramWidth": 1346,
+            "actualBudgetPx": 1346,
+            "actualReaderWidth": 1376,
+            "desiredReaderWidth": 1501.1538461538462,
             "viewportCap": 1376,
-            "limit": "source-size",
+            "limit": "viewport-cap",
             "requestedTargetPx": 7.5,
-            "requestedTargetMet": true,
+            "requestedTargetMet": false,
             "hardFloorPx": 6,
             "hardFloorMet": true,
             "minimumOwner": {
-              "kind": "edge",
-              "id": "git-push",
-              "from": "dev_git",
-              "to": "jenkins_ci"
+              "kind": "node",
+              "id": "ecr_registry"
             },
-            "minimumSourceTextPx": 8,
-            "minimumProjectedTextPx": 7.5,
-            "semanticTextCount": 54
+            "minimumSourceTextPx": 7.8,
+            "minimumProjectedTextPx": 6.861960784313725,
+            "semanticTextCount": 70
           },
           "issues": []
         },
         "provenance": "current",
-        "deliveryReceiptId": "dd66c27b-2e21-429f-b707-636573590c22"
+        "deliveryReceiptId": "12fea6f7-b7ac-4729-9e85-c8f6803135c1"
       }
     },
     "browser-check": {
       "status": "pass",
       "exitCode": 0,
-      "durationMs": 4514,
+      "durationMs": 4445,
       "command": [
         "/home/rushi/.local/opt/node-v22.14.0-linux-x64/bin/node",
         "/home/rushi/Desktop/AuditPilot/.agents/skills/archify/bin/archify.mjs",
@@ -275,11 +273,11 @@
         "status": "pass",
         "visualReview": "not-requested",
         "provenance": "current",
-        "deliveryReceiptId": "dd66c27b-2e21-429f-b707-636573590c22",
+        "deliveryReceiptId": "12fea6f7-b7ac-4729-9e85-c8f6803135c1",
         "artifact": {
           "path": "/home/rushi/Desktop/AuditPilot/docs/auditpilot-architecture.html",
-          "sha256": "f956e009855f8aa296d7013a0fc638a532d068fa0999d3f9911b07172e4bad90",
-          "bytes": 889097
+          "sha256": "7a0af4202d8a3651048d5292c32432ab4cab6361869b4afecb3a2843f572827a",
+          "bytes": 904844
         },
         "state": {
           "detail": "read",
@@ -316,21 +314,19 @@
                 "bodyPaddingPx": 12,
                 "headerPx": 78,
                 "diagramChromePx": 78,
-                "svgPx": 541,
+                "svgPx": 660,
                 "cardsPx": 0,
-                "viewBoxHeight": 572
+                "viewBoxHeight": 750
               },
-              "viewBoxWidth": 1423,
-              "minimumProjectedNodeTextPx": 7.567111735769501,
-              "minimumProjectedNonEdgeTextPx": 8.229234012649332,
-              "minimumProjectedEdgeTextPx": 7.567111735769501,
-              "minimumProjectedNodeText": "git push",
-              "minimumProjectedNodeTextDetail": "edge",
+              "viewBoxWidth": 1530,
+              "minimumProjectedNodeTextPx": 6.861960784313725,
+              "minimumProjectedNonEdgeTextPx": 6.861960784313725,
+              "minimumProjectedEdgeTextPx": 7.037908496732026,
+              "minimumProjectedNodeText": "Private Container Registry",
+              "minimumProjectedNodeTextDetail": "context",
               "minimumProjectedNodeTextOwner": {
-                "kind": "edge",
-                "id": "git-push",
-                "from": "dev_git",
-                "to": "jenkins_ci"
+                "kind": "node",
+                "id": "ecr_registry"
               },
               "minimumRequiredNodeTextPx": 6,
               "readabilityOk": true,
@@ -368,21 +364,19 @@
                 "bodyPaddingPx": 64,
                 "headerPx": 86,
                 "diagramChromePx": 84,
-                "svgPx": 605,
+                "svgPx": 738,
                 "cardsPx": 0,
-                "viewBoxHeight": 572
+                "viewBoxHeight": 750
               },
-              "viewBoxWidth": 1423,
-              "minimumProjectedNodeTextPx": 8,
-              "minimumProjectedNonEdgeTextPx": 8.7,
-              "minimumProjectedEdgeTextPx": 8,
-              "minimumProjectedNodeText": "git push",
-              "minimumProjectedNodeTextDetail": "edge",
+              "viewBoxWidth": 1530,
+              "minimumProjectedNodeTextPx": 7.677647058823529,
+              "minimumProjectedNonEdgeTextPx": 7.677647058823529,
+              "minimumProjectedEdgeTextPx": 7.874509803921568,
+              "minimumProjectedNodeText": "Private Container Registry",
+              "minimumProjectedNodeTextDetail": "context",
               "minimumProjectedNodeTextOwner": {
-                "kind": "edge",
-                "id": "git-push",
-                "from": "dev_git",
-                "to": "jenkins_ci"
+                "kind": "node",
+                "id": "ecr_registry"
               },
               "minimumRequiredNodeTextPx": 6,
               "readabilityOk": true,
@@ -414,27 +408,25 @@
               "readerOverflow": null,
               "readerFit": "intrinsic-height",
               "ok": true,
-              "readerWidth": 1856,
-              "diagramWidth": 1826,
+              "readerWidth": 1732,
+              "diagramWidth": 1702,
               "pageComposition": {
                 "bodyPaddingPx": 64,
                 "headerPx": 86,
                 "diagramChromePx": 84,
-                "svgPx": 734,
+                "svgPx": 834,
                 "cardsPx": 0,
-                "viewBoxHeight": 572
+                "viewBoxHeight": 750
               },
-              "viewBoxWidth": 1423,
-              "minimumProjectedNodeTextPx": 8,
-              "minimumProjectedNonEdgeTextPx": 8.7,
+              "viewBoxWidth": 1530,
+              "minimumProjectedNodeTextPx": 7.8,
+              "minimumProjectedNonEdgeTextPx": 7.8,
               "minimumProjectedEdgeTextPx": 8,
-              "minimumProjectedNodeText": "git push",
-              "minimumProjectedNodeTextDetail": "edge",
+              "minimumProjectedNodeText": "Private Container Registry",
+              "minimumProjectedNodeTextDetail": "context",
               "minimumProjectedNodeTextOwner": {
-                "kind": "edge",
-                "id": "git-push",
-                "from": "dev_git",
-                "to": "jenkins_ci"
+                "kind": "node",
+                "id": "ecr_registry"
               },
               "minimumRequiredNodeTextPx": 6,
               "readabilityOk": true,
@@ -472,21 +464,19 @@
                 "bodyPaddingPx": 64,
                 "headerPx": 94,
                 "diagramChromePx": 94,
-                "svgPx": 752,
+                "svgPx": 917,
                 "cardsPx": 0,
-                "viewBoxHeight": 572
+                "viewBoxHeight": 750
               },
-              "viewBoxWidth": 1423,
-              "minimumProjectedNodeTextPx": 8,
-              "minimumProjectedNonEdgeTextPx": 8.7,
+              "viewBoxWidth": 1530,
+              "minimumProjectedNodeTextPx": 7.8,
+              "minimumProjectedNonEdgeTextPx": 7.8,
               "minimumProjectedEdgeTextPx": 8,
-              "minimumProjectedNodeText": "git push",
-              "minimumProjectedNodeTextDetail": "edge",
+              "minimumProjectedNodeText": "Private Container Registry",
+              "minimumProjectedNodeTextDetail": "context",
               "minimumProjectedNodeTextOwner": {
-                "kind": "edge",
-                "id": "git-push",
-                "from": "dev_git",
-                "to": "jenkins_ci"
+                "kind": "node",
+                "id": "ecr_registry"
               },
               "minimumRequiredNodeTextPx": 6,
               "readabilityOk": true,
@@ -577,21 +567,19 @@
                 "bodyPaddingPx": 12,
                 "headerPx": 78,
                 "diagramChromePx": 78,
-                "svgPx": 541,
+                "svgPx": 660,
                 "cardsPx": 0,
-                "viewBoxHeight": 572
+                "viewBoxHeight": 750
               },
-              "viewBoxWidth": 1423,
-              "minimumProjectedNodeTextPx": 7.567111735769501,
-              "minimumProjectedNonEdgeTextPx": 8.229234012649332,
-              "minimumProjectedEdgeTextPx": 7.567111735769501,
-              "minimumProjectedNodeText": "git push",
-              "minimumProjectedNodeTextDetail": "edge",
+              "viewBoxWidth": 1530,
+              "minimumProjectedNodeTextPx": 6.861960784313725,
+              "minimumProjectedNonEdgeTextPx": 6.861960784313725,
+              "minimumProjectedEdgeTextPx": 7.037908496732026,
+              "minimumProjectedNodeText": "Private Container Registry",
+              "minimumProjectedNodeTextDetail": "context",
               "minimumProjectedNodeTextOwner": {
-                "kind": "edge",
-                "id": "git-push",
-                "from": "dev_git",
-                "to": "jenkins_ci"
+                "kind": "node",
+                "id": "ecr_registry"
               },
               "minimumRequiredNodeTextPx": 6,
               "readabilityOk": true,
@@ -629,21 +617,19 @@
                 "bodyPaddingPx": 64,
                 "headerPx": 86,
                 "diagramChromePx": 84,
-                "svgPx": 605,
+                "svgPx": 738,
                 "cardsPx": 0,
-                "viewBoxHeight": 572
+                "viewBoxHeight": 750
               },
-              "viewBoxWidth": 1423,
-              "minimumProjectedNodeTextPx": 8,
-              "minimumProjectedNonEdgeTextPx": 8.7,
-              "minimumProjectedEdgeTextPx": 8,
-              "minimumProjectedNodeText": "git push",
-              "minimumProjectedNodeTextDetail": "edge",
+              "viewBoxWidth": 1530,
+              "minimumProjectedNodeTextPx": 7.677647058823529,
+              "minimumProjectedNonEdgeTextPx": 7.677647058823529,
+              "minimumProjectedEdgeTextPx": 7.874509803921568,
+              "minimumProjectedNodeText": "Private Container Registry",
+              "minimumProjectedNodeTextDetail": "context",
               "minimumProjectedNodeTextOwner": {
-                "kind": "edge",
-                "id": "git-push",
-                "from": "dev_git",
-                "to": "jenkins_ci"
+                "kind": "node",
+                "id": "ecr_registry"
               },
               "minimumRequiredNodeTextPx": 6,
               "readabilityOk": true,
@@ -675,27 +661,25 @@
               "readerOverflow": null,
               "readerFit": "intrinsic-height",
               "ok": true,
-              "readerWidth": 1856,
-              "diagramWidth": 1826,
+              "readerWidth": 1732,
+              "diagramWidth": 1702,
               "pageComposition": {
                 "bodyPaddingPx": 64,
                 "headerPx": 86,
                 "diagramChromePx": 84,
-                "svgPx": 734,
+                "svgPx": 834,
                 "cardsPx": 0,
-                "viewBoxHeight": 572
+                "viewBoxHeight": 750
               },
-              "viewBoxWidth": 1423,
-              "minimumProjectedNodeTextPx": 8,
-              "minimumProjectedNonEdgeTextPx": 8.7,
+              "viewBoxWidth": 1530,
+              "minimumProjectedNodeTextPx": 7.8,
+              "minimumProjectedNonEdgeTextPx": 7.8,
               "minimumProjectedEdgeTextPx": 8,
-              "minimumProjectedNodeText": "git push",
-              "minimumProjectedNodeTextDetail": "edge",
+              "minimumProjectedNodeText": "Private Container Registry",
+              "minimumProjectedNodeTextDetail": "context",
               "minimumProjectedNodeTextOwner": {
-                "kind": "edge",
-                "id": "git-push",
-                "from": "dev_git",
-                "to": "jenkins_ci"
+                "kind": "node",
+                "id": "ecr_registry"
               },
               "minimumRequiredNodeTextPx": 6,
               "readabilityOk": true,
@@ -733,21 +717,19 @@
                 "bodyPaddingPx": 64,
                 "headerPx": 94,
                 "diagramChromePx": 94,
-                "svgPx": 752,
+                "svgPx": 917,
                 "cardsPx": 0,
-                "viewBoxHeight": 572
+                "viewBoxHeight": 750
               },
-              "viewBoxWidth": 1423,
-              "minimumProjectedNodeTextPx": 8,
-              "minimumProjectedNonEdgeTextPx": 8.7,
+              "viewBoxWidth": 1530,
+              "minimumProjectedNodeTextPx": 7.8,
+              "minimumProjectedNonEdgeTextPx": 7.8,
               "minimumProjectedEdgeTextPx": 8,
-              "minimumProjectedNodeText": "git push",
-              "minimumProjectedNodeTextDetail": "edge",
+              "minimumProjectedNodeText": "Private Container Registry",
+              "minimumProjectedNodeTextDetail": "context",
               "minimumProjectedNodeTextOwner": {
-                "kind": "edge",
-                "id": "git-push",
-                "from": "dev_git",
-                "to": "jenkins_ci"
+                "kind": "node",
+                "id": "ecr_registry"
               },
               "minimumRequiredNodeTextPx": 6,
               "readabilityOk": true,
@@ -790,21 +772,19 @@
                 "bodyPaddingPx": 12,
                 "headerPx": 78,
                 "diagramChromePx": 78,
-                "svgPx": 541,
+                "svgPx": 660,
                 "cardsPx": 0,
-                "viewBoxHeight": 572
+                "viewBoxHeight": 750
               },
-              "viewBoxWidth": 1423,
-              "minimumProjectedNodeTextPx": 7.567111735769501,
-              "minimumProjectedNonEdgeTextPx": 8.229234012649332,
-              "minimumProjectedEdgeTextPx": 7.567111735769501,
-              "minimumProjectedNodeText": "git push",
-              "minimumProjectedNodeTextDetail": "edge",
+              "viewBoxWidth": 1530,
+              "minimumProjectedNodeTextPx": 6.861960784313725,
+              "minimumProjectedNonEdgeTextPx": 6.861960784313725,
+              "minimumProjectedEdgeTextPx": 7.037908496732026,
+              "minimumProjectedNodeText": "Private Container Registry",
+              "minimumProjectedNodeTextDetail": "context",
               "minimumProjectedNodeTextOwner": {
-                "kind": "edge",
-                "id": "git-push",
-                "from": "dev_git",
-                "to": "jenkins_ci"
+                "kind": "node",
+                "id": "ecr_registry"
               },
               "minimumRequiredNodeTextPx": 6,
               "readabilityOk": true,
@@ -842,21 +822,19 @@
                 "bodyPaddingPx": 64,
                 "headerPx": 86,
                 "diagramChromePx": 84,
-                "svgPx": 605,
+                "svgPx": 738,
                 "cardsPx": 0,
-                "viewBoxHeight": 572
+                "viewBoxHeight": 750
               },
-              "viewBoxWidth": 1423,
-              "minimumProjectedNodeTextPx": 8,
-              "minimumProjectedNonEdgeTextPx": 8.7,
-              "minimumProjectedEdgeTextPx": 8,
-              "minimumProjectedNodeText": "git push",
-              "minimumProjectedNodeTextDetail": "edge",
+              "viewBoxWidth": 1530,
+              "minimumProjectedNodeTextPx": 7.677647058823529,
+              "minimumProjectedNonEdgeTextPx": 7.677647058823529,
+              "minimumProjectedEdgeTextPx": 7.874509803921568,
+              "minimumProjectedNodeText": "Private Container Registry",
+              "minimumProjectedNodeTextDetail": "context",
               "minimumProjectedNodeTextOwner": {
-                "kind": "edge",
-                "id": "git-push",
-                "from": "dev_git",
-                "to": "jenkins_ci"
+                "kind": "node",
+                "id": "ecr_registry"
               },
               "minimumRequiredNodeTextPx": 6,
               "readabilityOk": true,
@@ -888,27 +866,25 @@
               "readerOverflow": null,
               "readerFit": "intrinsic-height",
               "ok": true,
-              "readerWidth": 1856,
-              "diagramWidth": 1826,
+              "readerWidth": 1732,
+              "diagramWidth": 1702,
               "pageComposition": {
                 "bodyPaddingPx": 64,
                 "headerPx": 86,
                 "diagramChromePx": 84,
-                "svgPx": 734,
+                "svgPx": 834,
                 "cardsPx": 0,
-                "viewBoxHeight": 572
+                "viewBoxHeight": 750
               },
-              "viewBoxWidth": 1423,
-              "minimumProjectedNodeTextPx": 8,
-              "minimumProjectedNonEdgeTextPx": 8.7,
+              "viewBoxWidth": 1530,
+              "minimumProjectedNodeTextPx": 7.8,
+              "minimumProjectedNonEdgeTextPx": 7.8,
               "minimumProjectedEdgeTextPx": 8,
-              "minimumProjectedNodeText": "git push",
-              "minimumProjectedNodeTextDetail": "edge",
+              "minimumProjectedNodeText": "Private Container Registry",
+              "minimumProjectedNodeTextDetail": "context",
               "minimumProjectedNodeTextOwner": {
-                "kind": "edge",
-                "id": "git-push",
-                "from": "dev_git",
-                "to": "jenkins_ci"
+                "kind": "node",
+                "id": "ecr_registry"
               },
               "minimumRequiredNodeTextPx": 6,
               "readabilityOk": true,
@@ -946,21 +922,19 @@
                 "bodyPaddingPx": 64,
                 "headerPx": 94,
                 "diagramChromePx": 94,
-                "svgPx": 752,
+                "svgPx": 917,
                 "cardsPx": 0,
-                "viewBoxHeight": 572
+                "viewBoxHeight": 750
               },
-              "viewBoxWidth": 1423,
-              "minimumProjectedNodeTextPx": 8,
-              "minimumProjectedNonEdgeTextPx": 8.7,
+              "viewBoxWidth": 1530,
+              "minimumProjectedNodeTextPx": 7.8,
+              "minimumProjectedNonEdgeTextPx": 7.8,
               "minimumProjectedEdgeTextPx": 8,
-              "minimumProjectedNodeText": "git push",
-              "minimumProjectedNodeTextDetail": "edge",
+              "minimumProjectedNodeText": "Private Container Registry",
+              "minimumProjectedNodeTextDetail": "context",
               "minimumProjectedNodeTextOwner": {
-                "kind": "edge",
-                "id": "git-push",
-                "from": "dev_git",
-                "to": "jenkins_ci"
+                "kind": "node",
+                "id": "ecr_registry"
               },
               "minimumRequiredNodeTextPx": 6,
               "readabilityOk": true,
@@ -1001,15 +975,15 @@
     "browserCheckReceipt": "/home/rushi/Desktop/AuditPilot/docs/auditpilot-architecture.browser-check.json"
   },
   "visualReview": "not-requested",
-  "finishedAt": "2026-11-20T16:25:41.938Z",
-  "durationMs": 5842,
+  "finishedAt": "2026-11-20T16:40:40.413Z",
+  "durationMs": 5786,
   "update": {
     "status": "current",
     "installedVersion": "3.2.0",
     "availableVersion": "3.2.0",
     "releaseNotes": null,
     "checkedAt": "2026-11-20T16:25:36.237Z",
-    "source": "network",
+    "source": "cache",
     "noticeRequired": false,
     "noticeText": null
   }
